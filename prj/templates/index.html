@@ -1,0 +1,26 @@
+    <table border="1">
+     <th>No</th><th>Nama Situ</th><th>latitude</th><th>Longitude</th><th>Image</th>
+    {% for item in dataku %}
+      <tr>
+        <td>{{ loop.index }}</td><td>{{ item[0] }}</td><td>{{ item[1] }}</td><td>{{ item[2] }}</td>
+        <td>{{ item[3] }}</td>
+      </tr>
+    {% endfor %}
+    </table>
+<div id="map"></div>
+</body>
+<script>
+       var map = L.map('map').setView([-6.0, 106.0  ], 8);
+       mapLink =
+       '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+        'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; ' + mapLink + ' Contributors',
+        maxZoom: 18,
+       }).addTo(map);
+       {% for itemnya in dataku %}
+           var marker = L.marker([{{ itemnya[2] }}, {{ itemnya[1] }}]).addTo(map);
+           marker.bindPopup("{{ itemnya[0]}}").openPopup();
+       {% endfor %}
+</script>
+</html>

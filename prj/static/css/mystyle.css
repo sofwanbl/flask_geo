@@ -1,0 +1,38 @@
+#map {height:680px}
+#home
+{ text-align:center;
+  font-size:25px;
+  color:#2933C6;
+}
+
+#tabel_tampil_data
+{
+   width:95%;
+   border-collapse:collapse;
+   margin:auto;
+}
+
+#tabel_tampil_data th
+{
+  background-color:#AEAFC3;
+  padding:3px 0 3px 0;
+}
+
+#footer
+{
+  background-color:#6963B7;
+}
+
+#tulisan_footer
+{
+  text-align:center;
+  padding:5px 0 5px 0;
+}
+
+.tulisan_input_data
+{
+  position:relative;
+  left:33px;
+}
+
+

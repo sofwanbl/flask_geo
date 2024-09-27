@@ -1,0 +1,40 @@
+{% extends "header_footer.html" %}
+{% block content %}
+<h1>Entry Data</h1>
+<table>
+<form actions="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <tr>
+        <td>{{ form.zosm_id.label }}</td><td>:</td>
+        <td>{{ form.zosm_id (size=30) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form.zname.label }}</td><td>:</td>
+        <td>{{ form.zname (size=30) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form.zoperatorty.label }}</td><td>:</td>
+        <td>{{ form.zoperatorty (size=30) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form.zaddrcity.label }}</td><td>:</td>
+        <td>{{ form.zaddrcity (size=50) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form.zaddrfull.label }}</td><td>:</td>
+        <td>{{ form.zaddrfull (size=50) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form.zamenity.label }}</td><td>:</td>
+        <td>{{ form.zamenity }}</td>
+    </tr>
+    <tr>
+        <td>{{ form.zsource.label }}</td><td>:</td>
+        <td>{{ form.zsource (size=10) }}</td>
+    </tr>
+    <tr>
+        <td>{{ form.submit_entry() }} <input type="Button" value="Back" onClick="history.back(1)"/></td>
+    </tr>
+</form>
+</table>
+{% endblock %}

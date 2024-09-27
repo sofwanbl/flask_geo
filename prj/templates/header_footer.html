@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Flask Leaflet</title>
+   <!-- CSS -->
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/universal.css') }}" />
+   <link rel="stylesheet" href="{{ url_for('static', filename='leaflet/leaflet.css') }}" />
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}" />
+
+   <!-- JavaScript -->
+   <script src="{{ url_for('static', filename='leaflet/leaflet.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/universal.js') }}"></script>
+   <script>
+     function tanya()
+      {
+         var tanyain=confirm("Do you want to erase this data ?");
+         if (tanyain)
+           {
+              return True;
+           }
+         else
+           {
+              return False;
+           }
+       }
+   </script>
+</head>
+<body>
+ <a href="/">Home</a> | <a href="/tampil_data">Display Data</a>
+ {% block content %}{% endblock %}
+ <div id="footer">
+    <div id="tulisan_footer">
+        Data Spatial Processing -- Akhmad Sofwan
+    </div>
+ </div>
+</body>
+</html>
