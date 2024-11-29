@@ -1,0 +1,82 @@
+{% extends "header_footer.html" %}
+{% block content %}
+<style>
+  #textnya
+  {
+    text-align:center;
+    font-weight:bold;
+  }
+</style>
+<br/><br/><br/>
+<div id="textnya">Number of amenity</div>
+<table border="1" id="tabel_tampil_data">
+<th>No</th><th>Amenity</th><th>Amount</th>
+{% for item in jumlah %}
+<tr>
+  <td>{{ loop.index }}</td><td>{{ item[0] }}</td><td>{{ item[1] }}</td>
+</tr>
+{% endfor %}
+</table>
+<br/>
+<div id="textnya">Candidate Colocations size 2</div>
+<table border="1" id="tabel_tampil_data">
+<th>No</th><th>Co-location</th>
+<tr>
+  <td>1</td><td>university-School</td>
+</tr>
+<tr>
+  <td>2</td><td>University-Kindergarten</td>
+</tr>
+<tr>
+  <td>3</td><td>University-College</td>
+</tr>
+<tr>
+  <td>4</td><td>School-Kindergarten</td>
+</tr>
+<tr>
+  <td>5</td><td>School-College</td>
+</tr>
+<tr>
+  <td>6</td><td>Kindergarten-College</td>
+</tr>
+</table>
+<br/><br/>
+<br/>
+<table>
+<div id="textnya">Participation Index</div>
+</table>
+<table border="1" id="tabel_tampil_data">
+  <th>No</th><th>Candidate colocation</th><th>Distinct amount</th>
+  <th>Left participation</th><th>Right Participation</th><th>Participation Index</th>
+  <tr>
+    <td>1</td><td>University-School</td><td>{{ xa[0] }} | {{ xb[0] }}</td>
+    <td>{{ "%.2f" | format(xa[0]/xjml_university) }}</td><td>{{ "%.2f" | format(xb[0]/xjml_school) }}</td>
+    <td>{{ "%.2f" | format(xb[0]/xjml_school) }}</td>
+  </tr>
+  <tr>
+    <td>2</td><td>University-Kindergarten</td><td>{{ xc[0] }} | {{ xd[0] }}</td>
+    <td>{{ "%.2f" | format(xc[0]/xjml_university) }}</td><td>{{ "%.2f" | format(xd[0]/xjml_kindergarten) }}</td>
+    <td>{{ "%.2f" | format(xd[0]/xjml_kindergarten) }}</td>
+  </tr>
+  <tr>
+    <td>3</td><td>University-College</td><td>{{ xe[0] }} | {{ xf[0] }}</td>
+    <td>{{ "%.2f" | format(xe[0]/xjml_university) }}</td><td>{{ "%.2f" | format(xf[0] / xjml_college) }}</td>
+    <td>{{ "%.2f" | format(xf[0] / xjml_college) }}</td>
+  </tr>
+  <tr>
+    <td>4</td><td>School-Kindergarten</td><td>{{ xg[0] }} | {{ xh[0] }}</td>
+    <td>{{ "%.2f" | format(xg[0]/xjml_school) }}</td><td>{{ "%.2f" | format(xh[0]/xjml_kindergarten) }}</td>
+    <td>{{ "%.2f" | format(xh[0] / xjml_kindergarten) }}</td>
+  </tr>
+  <tr>
+    <td>5</td><td>School-College</td><td>{{ xi[0] }} | {{ xj[0] }}</td>
+    <td>{{ "%.2f" | format(xi[0]/xjml_school) }}</td><td>{{ "%.2f" | format(xj[0]/xjml_college) }}</td>
+    <td>{{ "%.2f" | format(xi[0]/xjml_school) }}</td>
+  </tr>
+  <tr>
+    <td>6</td><td>Kindergarten-College</td><td>{{ xk[0] }} | {{ xl[0] }}</td>
+    <td>{{ "%.2f" | format(xk[0]/xjml_kindergarten) }}</td><td>{{ "%.2f" | format(xl[0] /xjml_college) }}</td>
+    <td>{{ "%.2f" | format(xk[0]/xjml_kindergarten) }}</td>
+  </tr>
+</table>
+{% endblock %}

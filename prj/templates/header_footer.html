@@ -3,13 +3,13 @@
 <head>
    <title>Flask Leaflet</title>
    <!-- CSS -->
-   <link rel="stylesheet" href="{{ url_for('static', filename='css/universal.css') }}" />
    <link rel="stylesheet" href="{{ url_for('static', filename='leaflet/leaflet.css') }}" />
    <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}" />
+   <link rel="stylesheet" href="{{ url_for('static', filename='legend/src/leaflet.legend.css')}}" />
 
    <!-- JavaScript -->
    <script src="{{ url_for('static', filename='leaflet/leaflet.js') }}"></script>
-   <script src="{{ url_for('static', filename='js/universal.js') }}"></script>
+   <script src="{{ url_for('static', filename='legend/src/leaflet.legend.js') }}"></script>
    <script>
      function tanya()
       {
@@ -26,11 +26,12 @@
    </script>
 </head>
 <body>
- <a href="/">Home</a> | <a href="/tampil_data">Display Data</a>
+ <a href="/">Home</a> | <a href="/display_data">Display Data</a> |
+ <a href="/colocation">Co-location pattern mining</a>
  {% block content %}{% endblock %}
  <div id="footer">
     <div id="tulisan_footer">
-        Data Spatial Processing -- Akhmad Sofwan
+        Spatial Data Processing -- Akhmad Sofwan
     </div>
  </div>
 </body>
